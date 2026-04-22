@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="module" src="https://md-block.verou.me/md-block.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	
+	<article>
+
+		<h2>
+
+Fresh Install
+
+		</h2>
+
+		<md-block hlinks>
+
+[TOC]
+
+***
+
+# Pacman
+
+```sh
+# Clear cache
+sudo pacman -Scc
+
+# System update
+sudo pacman -Syyuu
+
+# Package removal
+sudo pacman -Ruuns <pacote>
+```
+
+# Docker
+
+```sh
+# Install docker
+sudo pacman -S docker docker-compose
+
+# Enable docker in system
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Grant user permissions
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+# Flatpak
+
+```sh
+# Install flatpak and utilities
+sudo pacman -S flatpak flatseal
+
+# Install some useful programs
+flatpak install flathub net.cozic.joplin_desktop com.spotify.Client com.usebottles.bottles com.github.libresprite.LibreSpritec sh.ppy.osu
+
+# Install some developers tool
+flatpak install flathub com.mongodb.Compass com.redis.RedisInsight com.google.AndroidStudio cc.arduino.IDE2 com.getpostman.Postman io.dbeaver.DBeaverCommunity
+```
+
+# Git
+
+```sh
+# Generate a email-based hash
+ssh-keygen -t ed25519 -C <email>
+
+# Add ssh key to agent
+eval "$(ssh-agent -s)"
+ssh-add <path>
+```
+
+
+# NeoVim
+
+```sh
+# Download neovim
+sudo pacman -S neovim neovim-lspconfig
+
+
+```
+
+# ZShell
+
+
+```sh
+# Download zsh and it's plugins
+sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions curl
+
+# Download Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Set the theme to 'jonathan' in file ~/.zshrc
+ZSH_THEME="jonathan"
+
+# Append to file ~/.zshrc
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+```
+
+		</md-block>
+	</article>
+</body>
+</html>
